@@ -1,7 +1,7 @@
 <?php
 
 if ($_SERVER['HTTP_HOST']== 'localhost'){
-    $sub_folder = '/web_pages_ocean/lander';
+    $sub_folder = '/web_pages_kaitaro/lander';
 }else{
     $sub_folder = '/lander';
 }
@@ -94,18 +94,19 @@ $bg_color = $_GET['bg_color'] ?? '';
         <link rel="stylesheet" href="//<?=$form_css?>">
     <?php } ?>
 
+    <!-- Google Tag Manager -->
     <script>
         var event = 'page_view';
-        var gogole_id = 'GTM-MJ78ZCZ5';
+        var g_id = 'GTM-MJ78ZCZ5';
 
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer',gogole_id,event);
+        })(window,document,'script','dataLayer',g_id,event);
 
     </script>
-
+    <!--END Google Tag Manager -->
 </head>
 
 <body>

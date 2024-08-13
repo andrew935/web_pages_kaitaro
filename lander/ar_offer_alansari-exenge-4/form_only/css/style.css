@@ -1,0 +1,73 @@
+@media (min-width: 900px) {
+    #register {
+        display: flex;
+        column-gap: 8px;
+    }
+
+    #register>div,
+    #register>button {
+        width: calc(30% - 4px);
+    }
+}
+
+.register_form input,.iti,button[type='submit']{
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    outline: none;
+}
+
+
+.register_form input {
+    height: 42px;
+    border: 1px solid #666;
+    font-size: 1rem;
+    border-radius: 30px;
+}
+
+.register_form input::placeholder {
+    color: #757575;
+}
+
+.invest_250 {
+    color: #b9b9b9;
+    margin-right: 5px;
+}
+
+.register_form input:not(#phone) {
+    text-align: right;
+    display: block;
+}
+
+.register_form  .errors{
+    background: #c38188;
+    text-align: center;
+    color: black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.register_form .submit_button{
+    height: 42px;
+    border: 0;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    background: rgb(0, 91, 255);
+    color: #FFFFFF ;
+    font-family: "Tajawal", Sans-serif;
+    font-weight: 400;
+    width: 100%;
+    border-radius: 30px;
+    line-height: 1.5;
+    padding: 8px 16px;
+}
+
+@media (max-width: 900px) {
+    .register_form .submit_button{
+        margin-bottom: 10px;
+    }
+}
+
+

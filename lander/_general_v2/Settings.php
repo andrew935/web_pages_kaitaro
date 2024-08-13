@@ -88,7 +88,7 @@ class Settings
 
             }
             #registerForm {
-                max-width: 400px;
+              /*  max-width: 400px;*/
                 margin: auto;
             }
         </style>

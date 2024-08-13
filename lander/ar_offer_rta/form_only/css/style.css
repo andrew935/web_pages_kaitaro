@@ -1,0 +1,47 @@
+.register_form input,.iti,button[type='submit']{
+    width: 100%;
+    display: block;
+    margin-top: 5px;
+    outline: none;
+}
+
+
+.register_form input {
+    /*height: 42px;*/
+    border-color: #A4A7AE;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+.register_form  .errors{
+    background: #c38188;
+    text-align: center;
+    color: black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.register_form .submit_button{
+    height: 57px;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: #b41212;
+    color: #FFFFFF ;
+    font-family: "Tajawal", Sans-serif;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.25);
+    line-height: 1.5;
+    padding: 8px 16px;
+    margin: 15px auto;
+}
+
+.register_form .submit_button:hover {
+    transform: scale(1.08);
+}
+
+

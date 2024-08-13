@@ -1,0 +1,9 @@
+
+.noUi-touch-area {
+   /* Add a border with a darker orange color */
+    border-radius: 250px; /* Add rounded corners to the touch area */
+}
+
+.RangeSlider__Wrapper-sc-146lxjr-0{
+    padding-right: 400px;
+}

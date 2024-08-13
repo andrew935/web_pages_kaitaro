@@ -1,0 +1,61 @@
+.register_form input,.iti,button[type='submit']{
+    width: 100%;
+    display: block;
+    margin-top: 7px;
+    outline: none;
+}
+
+
+.register_form input {
+    /*height: 42px;*/
+    border: 1px solid rgb(180, 179, 179);
+    border-radius: 5px;
+}
+
+.register_form input::placeholder {
+    color: #757575;
+}
+
+.invest_250,
+.register_form label {
+    color: #373737;
+    font-size: 13px;
+}
+
+.register_form label,
+.register_form input:not(#phone) {
+    text-align: right;
+    display: block;
+}
+
+.register_form  .errors{
+    background: #c38188;
+    text-align: center;
+    color: black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.register_form .submit_button{
+    height: 56px;
+    border: 0;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: rgb(116,4,244);
+    color: #FFFFFF ;
+    font-family: "Tajawal", Sans-serif;
+    font-weight: 600;
+    width: 100%;
+    border-radius: 10px;
+    line-height: 1.5;
+    padding: 8px 16px;
+    margin: 15px auto;
+}
+
+.register_form .submit_button:hover {
+    transform: scale(1.07);
+}
+
+
