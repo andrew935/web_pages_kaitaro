@@ -54,7 +54,7 @@ switch ($lang){
         }
 
         .bg {
-            background: url(/lander/_assets/img/bg-thanks-1.jpg);
+            background: url(/lander/_assets/img/bg-thanks.jpg);
 
             background-repeat: no-repeat;
             background-position: center;

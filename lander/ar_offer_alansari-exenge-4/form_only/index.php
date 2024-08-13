@@ -1,8 +1,14 @@
 <?php
+if ($_SERVER['HTTP_HOST']== 'localhost'){
+    $sub_folder = '/web_pages_kaitaro/lander';
+}else{
+    $sub_folder = '/lander';
+}
+
 
 $general_url = 'https://'.$_SERVER['HTTP_HOST'];
-$action_url = $general_url.'/_general_v2/form/register_lead.php';
-$thanks_url = $general_url.'/_general_v2/form/thanks.php';
+$action_url = $general_url.$sub_folder.'/_general_v2/store/register_lead.php';
+$thanks_url = $general_url.$sub_folder.'/_general_v2/store/thanks.php';
 
 
 $pixel = $_GET['pixel'] ?? '';
