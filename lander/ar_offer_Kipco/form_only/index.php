@@ -1,14 +1,23 @@
 <?php
 
+if ($_SERVER['HTTP_HOST']== 'localhost'){
+    $sub_folder = '/web_pages_kaitaro/lander';
+}else{
+    $sub_folder = '/lander';
+}
+
+
 $general_url = 'https://'.$_SERVER['HTTP_HOST'];
-$action_url = $general_url.'/_general_v2/form/register_lead.php';
-$thanks_url = $general_url.'/_general_v2/form/thanks.php';
+$action_url = $general_url.$sub_folder.'/_general_v2/store/register_lead.php';
+$thanks_url = $general_url.$sub_folder.'/_general_v2/store/thanks.php';
+//$jquery  = $general_url.'/lander/_assets/js/jquery-3.7.1.min.js';
 
-
-$pixel = $_GET['pixel'] ?? '';
-
-$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'KW';
-$lang =   'ar';
+$pixel = $_GET['pixel'] ?? $_COOKIE['pixel'] ?? '';
+if ($pixel == 'null'){
+    $pixel ='';
+}
+$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'AE';
+$lang = 'ar';
 $lang = strtolower($lang);
 
 $first_name = $_GET['first_name'] ?? '';
@@ -16,7 +25,7 @@ $last_name = $_GET['last_name'] ?? '';
 $email = $_GET['email'] ?? '';
 
 
-$labels = 1; // change to 0 for remove the labels
+$labels = $_GET['labels'] ?? 1;
 $class= '';
 
 $direction = 'ltr';
@@ -64,11 +73,8 @@ $bg_color = $_GET['bg_color'] ?? '';
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
-
-
-
     <style>
-        
+        .center{ text-align: center;}
 
         <?php if($bg_color != ''){ ?>
         .submit_button{
@@ -80,7 +86,7 @@ $bg_color = $_GET['bg_color'] ?? '';
             margin:auto;
         }
         .mb-3{
-            margin-bottom:0.9rem;
+            margin-bottom:0.4rem;
         }
     </style>
 
@@ -91,18 +97,20 @@ $bg_color = $_GET['bg_color'] ?? '';
     <!-- Google Tag Manager -->
     <script>
         var event = 'page_view';
+        var g_id = 'GTM-MJ78ZCZ5';
+
         (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-WWQFQ7SD');</script>
-    <!-- End Google Tag Manager -->
+        })(window,document,'script','dataLayer',g_id,event);
 
+    </script>
+    <!--END Google Tag Manager -->
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWQFQ7SD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
 
 <div id="overlay">
     <img src="./img/loader_1.gif" alt="Loading" width="150px" />
@@ -132,7 +140,7 @@ $bg_color = $_GET['bg_color'] ?? '';
                    placeholder="<?php echo $text->email ?>"
                    required="required"
                    pattern="[A-Za-z0-9._%+-]{1,}@[a-zA-Z0-9._%+-]{1,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z0-9._%+-]{2,}[.]{1}[a-zA-Z]{2,})"
-                   
+                   style="direction: ltr;"
             >
         </div>
         <div class="mb-3 mt-2 <?=$class?>" style="direction: ltr;">
@@ -167,8 +175,8 @@ $bg_color = $_GET['bg_color'] ?? '';
   <div class="redirect_popup" style="display: none">
   </div>
 
-    <script src="./js/jquery-3.7.1.min.js"></script>
-    <script src="./build/js/intlTelInput.js"></script>
+  <script src="/lander/_assets/js/jquery-3.7.1.min.js"></script>
+  <script src="./build/js/intlTelInput.js"></script>
 
   <script>
 
@@ -231,9 +239,8 @@ $bg_color = $_GET['bg_color'] ?? '';
                console.log(result);
               if (result.success  ) {
                   if (result.brand.redirectUrl != undefined){
-                      localStorage.setItem("login", result.brand.redirectUrl);
+                      localStorage.setItem("login", result.brand.redirectUrl); localStorage.setItem("data", data);
                       let urlParams = new URLSearchParams(window.location.search);
-
                       window.top.location.href = '<?=$thanks_url?>?'+ urlParams +'&url='+result.brand.redirectUrl;
                   }
                }else{
@@ -269,10 +276,6 @@ $bg_color = $_GET['bg_color'] ?? '';
        console.log('document');
    });
   </script>
-
-  <style type="text/css">
-
-        </style>
 </body>
 
 </html>

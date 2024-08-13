@@ -16,8 +16,8 @@ $pixel = $_GET['pixel'] ?? $_COOKIE['pixel'] ?? '';
 if ($pixel == 'null'){
     $pixel ='';
 }
-$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'IS';
-$lang = $_GET['lang'] ?? 'en';
+$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'AE';
+$lang = $_GET['lang'] ?? 'ar';
 $lang = strtolower($lang);
 
 $first_name = $_GET['first_name'] ?? '';

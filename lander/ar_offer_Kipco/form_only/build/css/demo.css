@@ -43,7 +43,7 @@ input, select {
 
 ::-moz-placeholder {
   /* Firefox 19+ */
-  color: #fff;
+  color: #BBB;
   opacity: 1; }
 
 :-ms-input-placeholder {

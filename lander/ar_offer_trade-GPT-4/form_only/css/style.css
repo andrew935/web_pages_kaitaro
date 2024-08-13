@@ -1,36 +1,16 @@
 .register_form input,.iti,button[type='submit']{
     width: 100%;
     display: block;
-    margin-bottom: 16px;
+    margin-top: 5px;
     outline: none;
 }
 
 
 .register_form input {
-    height: 44px;
-    font-size: 13px;
-    border: 1px solid rgb(180, 179, 179);
-    color: rgb(0, 0, 0);
-    border-radius: 5px;
-}
-
-.register_form label {
-    color: rgb(55, 55, 55);
-    font-size: 15px;
-    line-height: 1.2;
-    margin-bottom: 2px;
-    font-weight: 400;
-}
-
-.invest_250,
-.register_form input::placeholder {
-    color: #757575;
-}
-
-.register_form label,
-.register_form input:not(#phone) {
-    text-align: right;
-    display: block;
+    /*height: 42px;*/
+    border-color: #A4A7AE;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .register_form  .errors{
@@ -42,26 +22,26 @@
 }
 
 .register_form .submit_button{
-    height: 54px;
+    height: 57px;
     border: 0;
     cursor: pointer;
+    transition: all .3s;
     font-size: 20px;
-    transition: transform 0.45s ease 0s, box-shadow 0.35s ease 0s, color 0.3s ease 0s;
-    box-shadow: rgba(76, 233, 187, 0.69) 0px 0px 30px;
+    text-transform: uppercase;
+    background: #23a881;
     color: #FFFFFF ;
-    will-change: transform;
-    background: rgb(30, 166, 126);
     font-family: "Tajawal", Sans-serif;
-    font-weight: 400;
+    font-weight: 600;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.25);
     line-height: 1.5;
     padding: 8px 16px;
     margin: 15px auto;
 }
 
 .register_form .submit_button:hover {
-    transform: scale(1.07);
+    transform: scale(1.08);
 }
 
 

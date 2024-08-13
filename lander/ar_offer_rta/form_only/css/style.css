@@ -28,7 +28,7 @@
     transition: all .3s;
     font-size: 20px;
     text-transform: uppercase;
-    background-color: #b41212;
+    background: red;
     color: #FFFFFF ;
     font-family: "Tajawal", Sans-serif;
     font-weight: 600;

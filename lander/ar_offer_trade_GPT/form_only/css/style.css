@@ -2,15 +2,15 @@
     width: 100%;
     display: block;
     margin-top: 5px;
-    background: transparent;
-    color:whitesmoke;
+    outline: none;
 }
 
-.register_form input,.iti{
-    background: transparent!important;
-    color:whitesmoke;
-    border-radius: 8px
 
+.register_form input {
+    /*height: 42px;*/
+    border-color: #A4A7AE;
+    border-width: 1px 1px 1px 1px;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .register_form  .errors{
@@ -22,30 +22,26 @@
 }
 
 .register_form .submit_button{
-
-    /*max-width: 336px;*/
-    height: 52px;
+    height: 57px;
     border: 0;
     cursor: pointer;
-    transition: all .2s ease;
-    font-size: 16px;
+    transition: all .3s;
+    font-size: 20px;
     text-transform: uppercase;
-    background-color: #28d146 ;
+    background: #28d146;
     color: #FFFFFF ;
-    font-family: "Open Sans", Sans-serif;
-    font-weight: 700;
+    font-family: "Tajawal", Sans-serif;
+    font-weight: 600;
     width: 100%;
-    border-radius: 6px;
+    border-radius: 8px 8px 8px 8px;
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.25);
     line-height: 1.5;
     padding: 8px 16px;
     margin: 15px auto;
 }
 
-.iti__country-list {
-
-
-    background-color: black!important;
-    border: 1px solid #CCC;
-
+.register_form .submit_button:hover {
+    transform: scale(1.08);
 }
+
 
