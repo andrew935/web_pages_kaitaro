@@ -1,0 +1,558 @@
+
+
+.iaZBIw {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 10px;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width:1200px) {
+    .iaZBIw {
+        padding-inline-end: 10px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1199px) {
+    .iaZBIw {
+        max-width: 768px;
+        padding: 0 9px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .iaZBIw {
+        max-width: 360px;
+        padding-right: 10px;
+    }
+}
+
+
+
+
+
+.hDVMbF {
+    direction: rtl;
+    background: #e5e5e5;
+    padding: 63px 0 55px;
+    position: relative;
+}
+
+
+.hkhlrZ {
+    margin-bottom: 35px;
+}
+
+@media (max-width:1199px) {
+    .hkhlrZ {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+}
+
+
+html {
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+
+
+a {
+    background-color: transparent;
+}
+
+
+img {
+    border-style: none;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+
+button,
+input {
+    overflow: visible;
+    outline: none;
+}
+
+button {
+    text-transform: none;
+}
+
+[type="submit"],
+button {
+    -webkit-appearance: button;
+}
+
+[type="submit"]::-moz-focus-inner,
+button::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+[type="submit"]:-moz-focusring,
+button:-moz-focusring {
+    outline: 1px dotted ButtonText;
+}
+
+
+
+
+
+[type="checkbox"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+
+
+
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    direction: rtl;
+    font-family: var(--main-font),sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: 400;
+    
+    --main-font: 'Tajawal';
+    --primary-color-1: #333333;
+    --primary-color-2: #4f4f4f;
+    --primary-color-3: #828282;
+    --primary-color-4: #bdbdbd;
+    --primary-color-5: #e0e0e0;
+    --primary-color-6: #f2f2f2;
+}
+
+img {
+    display: block;
+}
+
+.Top__Image-sc-zew2h9-2{
+}
+
+.Container-sc-a4fxlm-0{
+    
+}
+.top__logo3{
+    
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.Top__Text-sc-zew2h9-3{
+    margin: auto;
+    text-align: center;
+}
+
+.Top__Text-sc-zew2h9-3 {
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0px 10px;
+  }
+
+#container-thanks {
+    display: none;
+    position: fixed;
+    width: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+}
+
+.thank-you-icon {
+    font-size: 48px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 978px) {
+    #container-thanks {
+        width: 80%; /* Adjust as needed */
+        max-width: 300px; /* Adjust as needed */
+    }
+}
+
+body {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    background-color: #fff;
+    color: #000;
+}
+
+h1 {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 0.5em;
+    line-height: 1
+}
+
+.form{
+   
+    top: 98px;
+    right: 35px;
+    padding: 0;
+    width: 380px;
+    border-radius: 18px;
+    background-color: white;
+    /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); */
+    text-align: center;
+    margin: auto;
+}
+
+@media (max-width:767px) {
+    .form{
+        position: relative;
+        right: 0;
+        top: 10px;
+       
+        margin-bottom: 250px;
+        width: 295px;
+        
+        border-radius: 18px;
+        background-color: white;
+        /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5); */
+        text-align: center;
+        margin: auto;
+    }
+}
+
+.form-terms{
+    padding: 10px;
+    font-size: 11px;
+}
+
+.form-terms{
+    padding: 10px;
+    font-size: 11px;
+}
+
+.lp_register_form .checkbox{
+    display: none !important;
+}
+
+
+.lp_register_form input[type="text"], .lp_register_form input[type="tel"] {
+    height: 1.5rem !important;
+    margin-bottom: 1rem !important;
+    padding: 1.25rem !important;
+  
+  
+}
+
+.lp_register_form .btn-submit{
+    width: 100%;
+    background: linear-gradient(#2b42c4 0%, #1B2872 100%) !important;
+}
+
+/* #intl_phone_0 {
+    padding-left: 10px; 
+    text-indent: 10px;
+} */
+
+.lp_register_form input[type="tel"]{
+    
+   direction: rtl !important;
+   padding-left: 74px !important;
+}
+
+.iti--allow-dropdown .iti__flag-container, .iti--show-selected-dial-code .iti__flag-container{
+    left: 0 !important;
+    right: auto !important;
+   
+}
+
+.form label{
+    display: none;
+    align-self: flex-start;
+}
+
+
+
+.lp_register_form {
+    max-width: 400px;
+    padding: 1rem;
+    margin: auto;
+    direction: ltr;
+}
+
+.lp_register_form form {
+    font: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.lp_register_form input[type="text"],
+.lp_register_form input[type="tel"] {
+    width: 100%;
+    height: 3rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.25rem 0.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+.lp_register_form input[type="tel"] {
+    padding-left: 27%;
+    text-align: left;
+}
+
+.lp_register_form .iti {
+    width: 100%;
+    display: block;
+}
+
+.lp_register_form .iti__flag-container {
+    direction: ltr;
+}
+
+.lp_register_form .iti__flag-container .iti__selected-flag {
+    background-color: transparent;
+}
+
+.lp_register_form .checkbox {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: start;
+    margin: 1rem 0;
+}
+
+.lp_register_form .checkbox input {
+    margin-right: 0.5rem;
+}
+
+.lp_register_form .checkbox p {
+    margin: 0;
+}
+
+.lp_register_form .btn-submit {
+    margin: 0 auto;
+    padding: 0.7rem 1.4rem;
+    border: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+    text-align: center;
+    background-color: #01bce1;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.lp_register_form .btn-submit:focus,
+.lp_register_form .btn-submit:hover {
+    transform: scale(1.1);
+}
+
+.lp_register_form .error {
+    width: 100%;
+    color: red;
+}
+
+.lp_register_form .success {
+    margin: 0 0 1rem;
+    color: green;
+}
+
+
+.iti {
+    position: relative;
+    display: inline-block;
+  }
+  .iti * {
+    box-sizing: border-box;
+  }
+  .iti__hide {
+    display: none;
+  }
+  .iti input.iti__tel-input,
+  .iti input.iti__tel-input[type=tel] {
+    position: relative;
+    z-index: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: 36px;
+    margin-right: 0;
+  }
+  .iti__flag-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 1px;
+  }
+  .iti__selected-flag {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 6px 0 8px;
+  }
+  .iti__arrow {
+    margin-left: 6px;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid #555;
+  }
+  [dir=rtl] .iti__arrow {
+    margin-right: 6px;
+    margin-left: 0;
+  }
+  .iti__dropdown-content {
+    border-radius: 3px;
+    background-color: white;
+  }
+  .iti--inline-dropdown .iti__dropdown-content {
+    position: absolute;
+    z-index: 2;
+    margin-top: 3px;
+    margin-left: -1px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  }
+  .iti--allow-dropdown input.iti__tel-input,
+  .iti--allow-dropdown input.iti__tel-input[type=tel],
+  .iti--show-selected-dial-code input.iti__tel-input,
+  .iti--show-selected-dial-code input.iti__tel-input[type=tel] {
+    padding-right: 6px;
+    padding-left: 52px;
+    margin-left: 0;
+  }
+  [dir=rtl] .iti--allow-dropdown input.iti__tel-input,
+  [dir=rtl] .iti--allow-dropdown input.iti__tel-input[type=tel],
+  [dir=rtl] .iti--show-selected-dial-code input.iti__tel-input,
+  [dir=rtl] .iti--show-selected-dial-code input.iti__tel-input[type=tel] {
+    padding-right: 52px;
+    padding-left: 6px;
+    margin-right: 0;
+  }
+  .iti--allow-dropdown .iti__flag-container, .iti--show-selected-dial-code .iti__flag-container {
+    right: auto;
+    left: 0;
+  }
+  [dir=rtl] .iti--allow-dropdown .iti__flag-container, [dir=rtl] .iti--show-selected-dial-code .iti__flag-container {
+    right: 0;
+    left: auto;
+  }
+  .iti--allow-dropdown .iti__flag-container:hover {
+    cursor: pointer;
+  }
+  .iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .iti--allow-dropdown .iti__flag-container:has(+ input[disabled]):hover,
+  .iti--allow-dropdown .iti__flag-container:has(+ input[readonly]):hover {
+    cursor: default;
+  }
+  .iti--allow-dropdown .iti__flag-container:has(+ input[disabled]):hover .iti__selected-flag,
+  .iti--allow-dropdown .iti__flag-container:has(+ input[readonly]):hover .iti__selected-flag {
+    background-color: transparent;
+  }
+  .iti--show-selected-dial-code .iti__selected-flag {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  .iti--show-selected-dial-code.iti--show-flags .iti__selected-dial-code {
+    margin-left: 6px;
+  }
+  [dir=rtl] .iti--show-selected-dial-code.iti--show-flags .iti__selected-dial-code {
+    margin-left: 0;
+    margin-right: 6px;
+  }
+  
+  .iti__flag {
+    width: 20px;
+  }
+  @media (min-resolution: 2x) {
+    .iti__flag {
+      background-size: 5762px 15px;
+    }
+  }
+  
+  .iti__flag {
+    height: 15px;
+    box-shadow: 0px 0px 1px 0px #888;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-position: 20px 0;
+  }
+  @media (min-resolution: 2x) {
+    .iti__flag {
+      background-image: url("");
+    }
+  }
