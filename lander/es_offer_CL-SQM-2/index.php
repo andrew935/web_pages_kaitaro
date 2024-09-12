@@ -337,8 +337,19 @@ $params .="&lang=". $p_lang;
                   <p style="margin: 0 !important; line-height: 15px !important;">Imermarket (PTY) LTD es la propietaria de la marca “InvesaCapital” y la responsable de operarla.</p>
                   <p style="margin: 0 !important; line-height: 15px !important;">Telefone: +27101571933</p>
                   <p style="margin: 0 !important; line-height: 15px !important;">Email: info@invesacapital.com</p>
-                
+
                </div>
+                <style>
+                    .footer_center {
+                        color: white;
+                        font-size: 0.5em;
+                        text-align: center;
+                        margin-top: 0.5em;
+                    }
+                </style>
+                <div class="col-12 footer_center ">
+                    © Trading News. Todos los derechos reservados desde 2024
+                </div>
             </div>
          </div>
       </footer>

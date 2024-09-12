@@ -53,6 +53,7 @@ $params .="&lang=". $p_lang;
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 </style>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <link rel="stylesheet" href="assets/style.css" />
 
         <?php $settings->in_header();?>
@@ -121,16 +122,61 @@ $params .="&lang=". $p_lang;
                 </h3>
             </div>
         </div>
-      
-        <div style="display: contents;">
-            <div class="GlobalFooter__FooterContainer-sc-1jle5k5-0 hDVMbF">
-                <div class="Container-sc-a4fxlm-0 iaZBIw">
-                    <div class="GlobalFooter__Logo-sc-1jle5k5-1 hkhlrZ">
-                        <a  href="#" class="scroll_to_register"><img src="img/logo.png"  alt="Logo" /></a>
+
+    <style>
+        footer {
+            font-size: 0.8em;
+            background: lightgrey;
+            margin-top: 2em;
+            text-align: center;
+        }
+
+        .center{
+            margin:auto;
+        }
+    </style>
+    <footer>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 center" style="text-align: center;">
+                        <a href="#" target="_blank" class="center">
+                            <img src="img/logo.png" class="img-fluid center" alt="logo" width="97" height="48" loading="lazy" />
+                        </a>
+
+                </div>
+                <div class="col-lg-12   ">
+
+                    <div class="text-left">
+                        <p>
+                            <a href="#" target="_blank" class="scroll_to_register">Contáctenos</a>
+                        </p>
+                        <p>
+                            <a href="<?=$settings->policy()?>" target="_blank" class="my-3 my-lg-0">Política de privacidad</a>
+                        </p>
+                        <p>
+                            <a href="<?=$settings->terms()?>" target="_blank">Términos y condiciones</a>
+                        </p>
+                    </div>
+                    <br />
+                </div>
+                <div class="col-12">
+                    <div data-lgl="disclaimer_taboola" class="disclaimer-ctr">
+                        <p>
+                            *Por favor, lea la <a href="<?=$settings->policy()?>" target="_blank" rel="noopener">Política de Privacidad</a> y los
+                            <a href="<?=$settings->terms()?>" target="_blank" rel="noopener">Términos y Condiciones</a> antes de continuar.
+                        </p>
+                        <p>
+                            Este anuncio no debe interpretarse como una recomendación para comprar o vender ningún valor y/o como oferta de servicios para clientes que residan en jurisdicciones en las que dicha oferta no esté
+                            autorizada. El uso de páginas web de brokers se efectúa al propio riesgo del cliente. El trading online puede provocar una pérdida completa o sustancial de fondos. Los CFDs son instrumentos complejos y vienen
+                            con un alto riesgo de perder dinero rápidamente debido al apalancamiento. Entre el 74% y el 89% de las cuentas de los inversores minoristas pierden dinero al operar CFDs. Usted debe considerar si comprende
+                            cómo funcionan los CFDs y si puede permitirse asumir el alto riesgo de perder su dinero.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+    </footer>
         <?php $settings->in_footer();?>
         
 	  <style>
