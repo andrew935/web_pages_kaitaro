@@ -429,6 +429,38 @@ class Settings
                     scrollTop: $("#registerForm").offset().top
                 }, 500);
             });
+
+
+            document.addEventListener("DOMContentLoaded", function() {
+                var fullHost = window.location.hostname;
+
+                // Split the host by '.' and keep the last two parts (e.g., "example.com")
+                var hostParts = fullHost.split('.');
+                var mainDomain = hostParts.slice(-2).join('.');
+
+                // Find the anchor tag and modify its href attribute
+                var policyLink = document.getElementById("policy");
+
+                if (policyLink) {
+                    policyLink.href = "https://" + mainDomain + "/privacyPolicy.html";
+                }
+
+
+
+                // Find the anchor tag and modify its href attribute
+                var termsLink = document.getElementById("terms");
+
+                if (termsLink) {
+                    termsLink.href = "https://" + mainDomain + "/terms.html";
+                }
+
+                var logo_main = document.getElementById("logo_main");
+
+                if (logo_main) {
+                    logo_main.href = "https://" + mainDomain ;
+                }
+            });
+
         </script>
         <?php
 

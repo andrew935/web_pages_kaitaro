@@ -147,24 +147,24 @@ $params .="&lang=". $p_lang;
                 </div>
                 <div class="col-lg-12   ">
 
-                    <div class="text-left">
+                    <!--<div class="text-left">
                         <p>
                             <a href="#" target="_blank" class="scroll_to_register">Contáctenos</a>
                         </p>
                         <p>
-                            <a href="<?=$settings->policy()?>" target="_blank" class="my-3 my-lg-0">Política de privacidad</a>
+                            <a href="<?php /*=$settings->policy()*/?>" target="_blank" class="my-3 my-lg-0">Política de privacidad</a>
                         </p>
                         <p>
-                            <a href="<?=$settings->terms()?>" target="_blank">Términos y condiciones</a>
+                            <a href="<?php /*=$settings->terms()*/?>" target="_blank">Términos y condiciones</a>
                         </p>
-                    </div>
+                    </div>-->
                     <br />
                 </div>
                 <div class="col-12">
                     <div data-lgl="disclaimer_taboola" class="disclaimer-ctr">
                         <p>
-                            *Por favor, lea la <a href="<?=$settings->policy()?>" target="_blank" rel="noopener">Política de Privacidad</a> y los
-                            <a href="<?=$settings->terms()?>" target="_blank" rel="noopener">Términos y Condiciones</a> antes de continuar.
+                            *Por favor, lea la <a href="<?=$settings->policy()?>"  id="policy" target="_blank" rel="noopener">Política de Privacidad</a> y los
+                            <a href="<?=$settings->terms()?>" id="terms"  target="_blank" rel="noopener">Términos y Condiciones</a> antes de continuar.
                         </p>
                         <p>
                             Este anuncio no debe interpretarse como una recomendación para comprar o vender ningún valor y/o como oferta de servicios para clientes que residan en jurisdicciones en las que dicha oferta no esté
@@ -184,14 +184,7 @@ $params .="&lang=". $p_lang;
 		scroll-behavior: smooth;
 		}
 	  </style>
-	  <script>
-            $("a.scroll_to_register").click(function(event) {
-               event.preventDefault();
-               $('html, body').animate({
-                  scrollTop: $("#registerForm").offset().top
-               }, 500);
-            });
-      </script>
+
        
     </body>
 </html>
