@@ -18,3 +18,7 @@ $text->end = "Pour investir, vous devez avoir au moins 18 ans. Capital minimum r
 $text->email_exist = "Un client avec cette adresse e-mail existe déjà.";
 $text->phone_exist = "Un client avec ce numéro de téléphone existe déjà.";
 $text->general = "Erreur, veuillez réessayer plus tard.";
+
+$text->terms = "En m'inscrivant, j'accepte";
+$text->terms2 = "les conditions d'utilisation";
+$text->terms3 = "la politique de confidentialité";

@@ -42,7 +42,7 @@
       <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>TradeLG</title>
+      <title>WM</title>
       <link rel="icon" type="image/x-icon" href="img/logo.png">
       <link rel="stylesheet" href="assets/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="assets/iti.min.css?1111">

@@ -20,3 +20,7 @@ $text->end = "Um zu investieren, müssen Sie mindestens 18 Jahre alt sein. Minde
 $text->email_exist = "Customer with this email already exists.";
 $text->phone_exist = "Customer with this phone number already exists.";
 $text->general = "Error, Please try again later";
+
+$text->terms = "Durch die Registrierung stimme ich zu";
+$text->terms2 = "den Nutzungsbedingungen";
+$text->terms3 = "der Datenschutzrichtlinie";

@@ -49,8 +49,8 @@ $params .= "&offer_url=" . $_SERVER['HTTP_HOST'] . strtok($_SERVER["REQUEST_URI"
    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>TradeLG</title>
-   <!--<link rel="icon" type="image/x-icon" href="assets/favicon.ico">-->
+   <title class="brandName"> WM</title>
+   <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico"> -->
 
    <link rel="stylesheet" href="assets/bootstrap.min.css">
    <link rel="stylesheet" href="assets/iti.min.css">
@@ -251,27 +251,25 @@ $params .= "&offer_url=" . $_SERVER['HTTP_HOST'] . strtok($_SERVER["REQUEST_URI"
          <div class="row">
             <div class="col-12 my-1 text-center">
                <a href=""  id='logo_main' class="scroll_to_register" rel="noopener noreferrer">
-                  <img src="img/logo.png" class="img-fluid main-logo" alt="logo" width="167" height="40"
+                  <img src="img/logo.png" class="img-fluid main-logo logoImg" alt="logo" width="167" height="40"
                      loading="lazy">
                </a>
             </div>
          </div>
          <div class="row">
-<!--            <div class="col-lg-12 nav-row">-->
-<!--               <a href="--><?php //= $settings->policy() ?><!--" target="_blank" rel="noopener noreferrer">Política-->
-<!--                  de privacidade</a>-->
-<!--               <a href="" rel="noopener noreferrer" class="my-3 scroll_to_register">Contate-Nos</a>-->
-<!--               <a href="--><?php //= $settings->terms() ?><!--" target="_blank" rel="noopener noreferrer">Termos e-->
-<!--                  Condições</a>-->
-<!--            </div>-->
+            <div class="col-lg-12 nav-row">
+               <a href="<?= $settings->policy() ?>" target="_blank" class="privacyPolicyLink" rel="noopener noreferrer">Política de privacidade</a>
+               <a href="" rel="noopener noreferrer" class="my-3 contactUsLink">Contate-Nos</a>
+               <a href="<?= $settings->terms()?>" target="_blank" class="termsLink" rel="noopener noreferrer">Termos e  Condições</a>
+            </div>
             <div class="col-12">
                <div data-lgl="disclaimer" class="disclaimer-ctr">
                   <p>*Por favor, leia a
-                      <a href="<?= $settings->policy() ?>" id="policy" target="_blank" rel="noopener">
+                      <a href="<?= $settings->policy() ?>" class="privacyPolicyLink"  target="_blank" rel="noopener">
                           Política de Privacidade
                       </a>
                       e
-                      <a href="<?= $settings->terms() ?>"  id="terms" target="_blank" rel="noopener">
+                      <a href="<?= $settings->terms() ?>" class="termsLink"   target="_blank" rel="noopener">
                           Termos e Condições
                       </a>
                       antes de continuar.</p>
@@ -328,7 +326,7 @@ $params .= "&offer_url=" . $_SERVER['HTTP_HOST'] . strtok($_SERVER["REQUEST_URI"
       </div>
    </div>
 
-   <?php $settings->in_footer(); ?>
+   <?php $settings->in_footer('https://kt.supermediahub.top/lander/agency_4/api.php'); ?>
 
    <script src="assets/script.js"></script>
 

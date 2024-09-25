@@ -94,6 +94,8 @@ $bg_color = $_GET['bg_color'] ?? '';
         .mb-3{
             margin-bottom:0.4rem;
         }
+
+
     </style>
 
     <?php if($form_css != ''){ ?>

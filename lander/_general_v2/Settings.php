@@ -413,7 +413,7 @@ class Settings
         <?php }
     }
 
-    function in_footer(){
+    function in_footer($agency_url = null){
         ?>
         <!-- FOOTER -->
         <script>
@@ -430,36 +430,75 @@ class Settings
                 }, 500);
             });
 
-
+            console.log("<?=$agency_url?>");
             document.addEventListener("DOMContentLoaded", function() {
-                var fullHost = window.location.hostname;
+                <?php if($agency_url!=null) { ?>
+                   // var fullHost = window.location.hostname;
 
-                // Split the host by '.' and keep the last two parts (e.g., "example.com")
-                var hostParts = fullHost.split('.');
-                var mainDomain = hostParts.slice(-2).join('.');
+                    // Split the host by '.' and keep the last two parts (e.g., "example.com")
+                    //var hostParts = fullHost.split('.');
+                    //var mainDomain = hostParts.slice(-2).join('.');
 
-                // Find the anchor tag and modify its href attribute
-                var policyLink = document.getElementById("policy");
-
-                if (policyLink) {
-                    policyLink.href = "https://" + mainDomain + "/privacyPolicy.html";
-                }
-
-
-
-                // Find the anchor tag and modify its href attribute
-                var termsLink = document.getElementById("terms");
-
-                if (termsLink) {
-                    termsLink.href = "https://" + mainDomain + "/terms.html";
-                }
-
-                var logo_main = document.getElementById("logo_main");
-
-                if (logo_main) {
-                    logo_main.href = "https://" + mainDomain ;
-                }
+                    let agency_url = "<?=$agency_url?>";
+                    console.log(agency_url);
+                    fetchAndUpdatePage(agency_url);
+                <?php  } ?>
             });
+
+
+            function fetchAndUpdatePage(apiUrl) {
+                console.log(' apiUrl '+apiUrl);
+                fetch(apiUrl)
+                    .then(response => response.json()) // Parse the response as JSON
+                    .then(data => {
+                        // Check if data exists
+                        if (data) {
+                            console.log(data);
+                            var fullHost = window.location.hostname;
+                            var hostParts = fullHost.split('.');
+                            var mainDomain = hostParts.slice(-2).join('.');
+
+                            // Check and update brand name if it exists
+                            if (data.name !== undefined) {
+                                document.querySelectorAll('.brandName').forEach(el => {
+                                    el.textContent = data.name;
+                                });
+                            }
+
+                            // Check and update terms link if it exists
+                            if (data.terms !== undefined) {
+                                document.querySelectorAll('.termsLink').forEach(el => {
+                                    el.href = mainDomain + data.terms;
+                                });
+                            }
+
+                            // Check and update privacy policy link if it exists
+                            if (data.privacyPolicy !== undefined) {
+                                document.querySelectorAll('.privacyPolicyLink').forEach(el => {
+                                    el.href = mainDomain + data.privacyPolicy;
+                                });
+                            }
+
+                            // Check and update contact us link if it exists
+                            if (data.contactUs !== undefined) {
+                                document.querySelectorAll('.contactUsLink').forEach(el => {
+                                    el.href = mainDomain + data.contactUs;
+                                });
+                            }
+
+                            // Check and update logo image if it exists
+                            if (data.logo !== undefined) {
+                                document.querySelectorAll('.logoImg').forEach(el => {
+                                    el.src = mainDomain + data.logo;
+                                });
+                            }
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error fetching data:', error);
+                    });
+            }
+
 
         </script>
         <?php

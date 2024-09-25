@@ -1,39 +1,33 @@
 <?php
-if (stripos($_SERVER['HTTP_HOST'], 'localhost') !== false) {
+if ($_SERVER['HTTP_HOST']== 'localhost'){
     $sub_folder = '/web_pages_kaitaro/lander';
-} else {
+}else{
     $sub_folder = '/lander';
 }
-
-
 
 
 $general_url = 'https://'.$_SERVER['HTTP_HOST'];
 $action_url = $general_url.$sub_folder.'/_general_v2/store/register_lead.php';
 $thanks_url = $general_url.$sub_folder.'/_general_v2/store/thanks.php';
-$jquery  = $sub_folder.'/_assets/js/jquery-3.7.1.min.js';
+$jquery  = $general_url.'/js/jquery-3.7.1.min.js';
 
-$pixel = $_GET['pixel'] ?? '';
+$policy  = $general_url.'/_general_v2/policy/policy.php';
+$terms  = $general_url.'/_general_v2/policy/termsandconditions.php';
 
-$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'BR';
-$lang = $_GET['lang'] ?? 'pt';
-$lang = strtolower($lang);
-
-$inputString = $lang;
-
-// Check if the input string contains "{{"
-if (strpos($inputString, '{{') !== false) {
-    // Replace "{{lang}}" with "en"
-    $_GET['lang'] = str_replace('{{lang}}', 'en', $inputString);
+$pixel = $_GET['pixel'] ?? $_COOKIE['fpixel'] ?? '';
+if ($pixel == 'null'){
+    $pixel ='';
 }
-
+$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'BR';
+$lang = 'pt';
+$lang = strtolower($lang);
 
 $first_name = $_GET['first_name'] ?? '';
 $last_name = $_GET['last_name'] ?? '';
 $email = $_GET['email'] ?? '';
 
 
-$labels = 1; // change to 0 for remove the labels
+$labels = $_GET['labels'] ?? 1;
 $class= '';
 
 $direction = 'ltr';
@@ -79,6 +73,7 @@ $bg_color = $_GET['bg_color'] ?? '';
     <link rel="stylesheet" href="./build/css/intlTelInput.css">
     <link rel="stylesheet" href="./build/css/demo.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/terms.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
 
@@ -99,18 +94,31 @@ $bg_color = $_GET['bg_color'] ?? '';
         .mb-3{
             margin-bottom:0.4rem;
         }
+
+
     </style>
 
     <?php if($form_css != ''){ ?>
         <link rel="stylesheet" href="//<?=$form_css?>">
     <?php } ?>
 
-    <?php  //$settings->in_header_form(); ?>
+    <!-- Google Tag Manager -->
+    <script>
+        var event = 'page_view';
+        var google_id = 'GTM-WWQFQ7SD';
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer',google_id,event);
+    </script>
+    <!-- End Google Tag Manager -->
 
 </head>
 
 <body>
-<?php //$settings->in_body_form(); ?>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WWQFQ7SD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div id="overlay">
     <img src="./img/loader_1.gif" alt="Loading" width="150px" />
@@ -140,7 +148,7 @@ $bg_color = $_GET['bg_color'] ?? '';
                    placeholder="<?php echo $text->email ?>"
                    required="required"
                    pattern="[A-Za-z0-9._%+-]{1,}@[a-zA-Z0-9._%+-]{1,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z0-9._%+-]{2,}[.]{1}[a-zA-Z]{2,})"
-                   style="direction:ltr !important;"
+                   style="direction: ltr;"
             >
         </div>
         <div class="mb-3 mt-2 <?=$class?>" style="direction: ltr;">
@@ -156,12 +164,16 @@ $bg_color = $_GET['bg_color'] ?? '';
 
         <?php
         foreach ($_GET as $key=>$val){
-            if ($val=='' || $val=='undefined' || $val=='null' || $val=='{{lang}}'){
+            if ($val=='' || $val=='undefined' || $val=='null'){
                 continue;
             }?>
             <input  name="<?=$key?>"  value="<?=$val?>" type="hidden" >
         <?php } ?>
 
+        <div class="mb-3 mt-2  <?=$class?> terms">
+            <input type="checkbox" id="terms" name="terms"  checked   required="required">
+            <?=$text->terms?> <a href="<?=$terms?>" target="_blank"><?=$text->terms2?></a>, <a href="<?=$policy?>" target="_blank"><?=$text->terms3?></a> .
+        </div>
         <button id="submit" type="submit" class="submit_button" >
             <span id="register_button" > <?php echo $text->register ?> </span>
             <span id="loading_button" style="display: none" > <img src="img/loader_1.gif" width="25px"> </span>
@@ -175,107 +187,109 @@ $bg_color = $_GET['bg_color'] ?? '';
   <div class="redirect_popup" style="display: none">
   </div>
 
-    <script src="<?=$jquery?>"></script>
-    <script src="./build/js/intlTelInput.js"></script>
+  <script src="/lander/_assets/js/jquery-3.7.1.min.js"></script>
+  <script src="./build/js/intlTelInput.js"></script>
 
   <script>
 
-   const input = document.querySelector("#phone");
-    var iti = intlTelInput(input, {
-      // any initialisation options go here
-      initialCountry: "<?=$country?>",
-      excludeCountries: ["US"],
-      separateDialCode: true,
-      utilsScript: "build/js/utils.js",
-    });
 
 
-   var countryData = iti.getSelectedCountryData();
-   $('#phone_pre').val(countryData.dialCode);
-   $('#country').val(countryData.iso2.toUpperCase());
-
-   console.log(countryData);
-
-
-   input.addEventListener("countrychange", function() {
-       var countryData = iti.getSelectedCountryData();
-       $('#phone_pre').val(countryData.dialCode);
-       $('#country').val(countryData.iso2.toUpperCase());
-
-   });
+          const input = document.querySelector("#phone");
+          var iti = intlTelInput(input, {
+          // any initialisation options go here
+          initialCountry: "<?=$country?>",
+          excludeCountries: ["US"],
+          separateDialCode: true,
+          utilsScript: "build/js/utils.js",
+      });
 
 
-   $("#register").submit(function(event) {
+          var countryData = iti.getSelectedCountryData();
+          $('#phone_pre').val(countryData.dialCode);
+          $('#country').val(countryData.iso2.toUpperCase());
 
-       console.log('register');
-       event.preventDefault();
-       $('#submit').prop('disabled', true);
-       $('.errors').hide(250);
-       $('.closer').show();
-       $('#register_button').hide();
-       $('#loading_button').show();
+          console.log(countryData);
 
 
-       let $form = $(this),
-           url = $form.attr('action');
-       let data = $( this ).serialize();
-       console.log('url');
-       console.log(url);
+          input.addEventListener("countrychange", function() {
+          var countryData = iti.getSelectedCountryData();
+          $('#phone_pre').val(countryData.dialCode);
+          $('#country').val(countryData.iso2.toUpperCase());
 
-       console.log('data');
-       console.log(data);
+      });
 
-       $.ajax({
-           type: "POST",
-           url: url,
-           data: data,
-           success: function(result_json) {
-               let result = JSON.parse(result_json)
 
-               console.log('result_json');
-               console.log(result_json);
+          $("#register").submit(function(event) {
 
-               console.log('result');
-               console.log(result);
-              if (result.success  ) {
-                  if (result.brand.redirectUrl != undefined){
-                      localStorage.setItem("login", result.brand.redirectUrl); localStorage.setItem("data", data);
-                      let urlParams = new URLSearchParams(window.location.search);
+          console.log('register');
+          event.preventDefault();
+          $('#submit').prop('disabled', true);
+          $('.errors').hide(250);
+          $('.closer').show();
+          $('#register_button').hide();
+          $('#loading_button').show();
 
-                      window.top.location.href = '<?=$thanks_url?>?'+ urlParams +'&url='+result.brand.redirectUrl;
-                  }
-               }else{
-                   $('.errors').text( result.message);
-                   let error = result.message;
-                   $('.errors').text(error);
-                   $('.closer').hide();
-                   $('.errors').show(250);
-                   $('#loading_button').hide();
-                   $('#register_button').show();
-                   $('#submit').prop('disabled', false);
-               }
 
-           },
-           error: function(xhr, status, error) {
-               console.log('Error:' );
-               console.log(error );
-               console.log('status:' );
-               console.log(status );
-               console.log('xhr:' );
-               console.log(xhr );
-               $('#loading_button').hide();
-               $('#register_button').show();
+          let $form = $(this),
+          url = $form.attr('action');
+          let data = $( this ).serialize();
+          console.log('url');
+          console.log(url);
 
-               $('#submit').prop('disabled', false);
+          console.log('data');
+          console.log(data);
 
-           }
-       });
-   });
+          $.ajax({
+          type: "POST",
+          url: url,
+          data: data,
+          success: function(result_json) {
+          let result = JSON.parse(result_json)
 
-   $(document).ready(function () {
-       $('#overlay').hide(150);
-       console.log('document');
-   });
+          console.log('result_json');
+          console.log(result_json);
+
+          console.log('result');
+          console.log(result);
+          if (result.success  ) {
+          if (result.brand.redirectUrl != undefined){
+          localStorage.setItem("login", result.brand.redirectUrl); localStorage.setItem("data", data);
+          let urlParams = new URLSearchParams(window.location.search);
+          window.top.location.href = '<?=$thanks_url?>?'+ urlParams +'&url='+result.brand.redirectUrl;
+      }
+      }else{
+          $('.errors').text( result.message);
+          let error = result.message;
+          $('.errors').text(error);
+          $('.closer').hide();
+          $('.errors').show(250);
+          $('#loading_button').hide();
+          $('#register_button').show();
+          $('#submit').prop('disabled', false);
+      }
+
+      },
+          error: function(xhr, status, error) {
+          console.log('Error:' );
+          console.log(error );
+          console.log('status:' );
+          console.log(status );
+          console.log('xhr:' );
+          console.log(xhr );
+          $('#loading_button').hide();
+          $('#register_button').show();
+
+          $('#submit').prop('disabled', false);
+
+      }
+      });
+      });
+
+          $(document).ready(function () {
+          $('#overlay').hide(150);
+          console.log('document');
+      });
+
   </script>
 </body>
 

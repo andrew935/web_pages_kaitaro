@@ -19,3 +19,8 @@ $text->end = "To invest you must be at least 18 years of age. Minimum capital re
 $text->email_exist = "Customer with this email already exists.";
 $text->phone_exist = "Customer with this phone number already exists.";
 $text->general = "Error, Please try again later";
+
+
+$text->terms = "By registering, I agree to the website's";
+$text->terms2 = "terms of use";
+$text->terms3 = "privacy policy";

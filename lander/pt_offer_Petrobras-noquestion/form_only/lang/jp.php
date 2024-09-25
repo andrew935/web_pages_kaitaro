@@ -18,5 +18,9 @@ $text->end = "投資するには、18 歳以上である必要があります。
 
 
 $text->email_exist = "このメールアドレスを持つ顧客はすでに存在します。";
-$text->phone_exist = "この電話番号を持つ顧客はすでに存在します。";
-$text->general = "エラー。後でもう一度お試しください。";
+$text->errors->phone_exist = "この電話番号を持つ顧客はすでに存在します。";
+$text->errors->general = "エラー。後でもう一度お試しください。";
+
+$text->terms = "登録することで、同意します";
+$text->terms2 = "利用規約";
+$text->terms3 = "プライバシーポリシー";
