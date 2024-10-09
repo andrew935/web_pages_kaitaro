@@ -1,14 +1,28 @@
 <?php
-//$kaitaro_post_back_url = 'http://216.238.105.254/38e5d01/postback';
-//$kaitaro_post_back_url='http://216.238.105.254/postback';
-$kaitaro_post_back_url='https://keitaro.invest-education.com/0dd875c/postback';
 
+$kaitaro_post_back_url='https://kt.supermediahub.top/5f43320/postback';
 
+$cloudflareData = [
+    //'scheme' => json_decode($_SERVER['HTTP_CF_VISITOR'] ?? '{}', true)['scheme'] ?? 'http',
+    'cf_ray' => $_SERVER['HTTP_CF_RAY'] ?? 'Unknown',
+    //'cf_request_id' => $_SERVER['HTTP_CF_REQUEST_ID'] ?? 'Unknown',
+    //'true_client_ip' => $_SERVER['HTTP_TRUE_CLIENT_IP'] ?? 'Unknown',
+    'bot_management' => $_SERVER['HTTP_CF_BOT_MANAGEMENT'] ?? '0',
+    'asn' => $_SERVER['HTTP_CF_ASN'] ?? 'Unknown',
+    'forwarded_for' => $_SERVER['HTTP_X_FORWARDED_FOR'] ?? $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0',
+    'cache_status' => $_SERVER['HTTP_CF_CACHE_STATUS'] ?? 'Unknown',
+    'referrer'=> $_SERVER['HTTP_REFERER'] ?? 'Direct Traffic',
+    'language' => substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) ?? '',
+    'os' => getOS(),
+    'browser' => getBrowser(),
+    'mobile'=>mobile(),
+];
 
 $respond = new stdClass();
-$respond->platform = 'n2';
+$respond->platform = 'kaitaro';
 $respond->success = 1;
 $respond->message = '';
+$respond->general_lead_data = $cloudflareData;
 
 $data =[];
 if (isset($_POST)){
@@ -324,16 +338,15 @@ if ($data['media'] == "MG" && $respond->success == 1 ){
     }
 }
 
-if ($data['media'] == 32 && $respond->success == 1 ){
+if ($data['media'] == "KL" && $respond->success == 1 ){
+    $kalima_url_postback ="https://app.kalima.ai/api/conversion/65?kalima_click_id=".$data['click_id'];
+    $kalima_respond= file_get_contents($kalima_url_postback);
 
-    $speakol_url ="https://pixel.speakol.com/postback?id=".$data['pixel']."&spcid=".$data['spcid']."&ev=lead";
-    $speakol_postback = file_get_contents($adskeeper_url);
-
-    if(isset($data['telegram']) ){
+    if(isset($data['telegram'])){
         if($data['telegram'] == 1){
-            send_to_telegram('Media 32');
-            send_to_telegram($speakol_url);
-            send_to_telegram($speakol_postback);
+            send_to_telegram('Media '.$data['media']);
+            send_to_telegram($kalima_url_postback);
+            send_to_telegram($kalima_respond);
 
         }
     }
@@ -386,4 +399,84 @@ function send_pixel($url){
 
     curl_close($curl);
     return $response;
+}
+
+
+
+function getOS() {
+
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+    $os_platform  = "Unknown";
+
+    $os_array     = array(
+        '/windows nt 10/i'      =>  'Windows 10',
+        '/windows nt 6.3/i'     =>  'Windows 8.1',
+        '/windows nt 6.2/i'     =>  'Windows 8',
+        '/windows nt 6.1/i'     =>  'Windows 7',
+        '/windows nt 6.0/i'     =>  'Windows Vista',
+        '/windows nt 5.2/i'     =>  'Windows Server 2003/XP x64',
+        '/windows nt 5.1/i'     =>  'Windows XP',
+        '/windows xp/i'         =>  'Windows XP',
+        '/windows nt 5.0/i'     =>  'Windows 2000',
+        '/windows me/i'         =>  'Windows ME',
+        '/win98/i'              =>  'Windows 98',
+        '/win95/i'              =>  'Windows 95',
+        '/win16/i'              =>  'Windows 3.11',
+        '/macintosh|mac os x/i' =>  'Mac OS X',
+        '/mac_powerpc/i'        =>  'Mac OS 9',
+        '/linux/i'              =>  'Linux',
+        '/ubuntu/i'             =>  'Ubuntu',
+        '/iphone/i'             =>  'iPhone',
+        '/ipod/i'               =>  'iPod',
+        '/ipad/i'               =>  'iPad',
+        '/android/i'            =>  'Android',
+        '/blackberry/i'         =>  'BlackBerry',
+        '/webos/i'              =>  'Mobile'
+    );
+
+    foreach ($os_array as $regex => $value)
+        if (preg_match($regex, $user_agent))
+            $os_platform = $value;
+
+    return $os_platform;
+}
+
+function getBrowser() {
+
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+
+    $browser        = "Unknown Browser";
+
+    $browser_array = array(
+        '/msie/i'      => 'Internet Explorer',
+        '/firefox/i'   => 'Firefox',
+        '/safari/i'    => 'Safari',
+        '/chrome/i'    => 'Chrome',
+        '/edge/i'      => 'Edge',
+        '/opera/i'     => 'Opera',
+        '/netscape/i'  => 'Netscape',
+        '/maxthon/i'   => 'Maxthon',
+        '/konqueror/i' => 'Konqueror',
+        '/mobile/i'    => 'Handheld Browser'
+    );
+
+    foreach ($browser_array as $regex => $value)
+        if (preg_match($regex, $user_agent))
+            $browser = $value;
+
+    return $browser;
+}
+
+
+function isMobileDevice() {
+    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i" , $_SERVER["HTTP_USER_AGENT"]);
+}
+function mobile(){
+    $device = '';
+    if( isMobileDevice()){
+        $device =  "Mobile";
+    }
+
+    return $device;
 }
