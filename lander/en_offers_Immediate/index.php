@@ -2,7 +2,20 @@
 
 $keyword = $_GET['keyword'] ?? 'Immediate i800 Daypro';
 
- $dev = $_GET['dev'] ?? 0;
+$platform = 'kaitaro';
+
+switch ($platform) {
+    case 'n2':
+        $sub_folder = '';
+        require_once dirname(__DIR__) . '/../../_assets/Settings.php';
+        break;
+    case 'kaitaro':
+        $sub_folder = '/lander';
+        require_once dirname(__FILE__) . '/../_general_v2/Settings.php';
+        break;
+}
+
+$dev = $_GET['dev'] ?? 0;
 if ($dev == 1){
     ini_set('display_errors', '1');
     ini_set('display_startup_errors', '1');
@@ -10,8 +23,8 @@ if ($dev == 1){
 }
 
 $p_keyword = $keyword; // Replace with your offer name
-$p_lang    = "en"; // page Language LOW CASE 
-$p_country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ?? "IN"; // Replace with the default country ISO Upper case for arabic make AE 
+$p_lang    = "Language_of_the_offer"; // page Language LOW CASE
+$p_country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ?? "COUNTRY_OF_OFFER"; // Replace with the default country ISO Upper case for arabic make AE
 
 $p_soParam = "";
 $p_pageId  = "";
@@ -31,13 +44,12 @@ if(isset($_GET['exit']) && isset($_GET['get_page_vars'])){
     }
 }
 
-// require_once dirname(__FILE__) . '/../_general_v2/Settings.php';
-require_once dirname(__DIR__) . '/../../_assets/Settings.php';
 $settings = new Settings();
 $params = $settings->before_html($p_lang,$p_country);
+$params .="&platform=". $platform;
 $params .="&utm_campaign=". $p_keyword;
 $params .="&lang=". $p_lang;
-   $params .="&offer_url=". $_SERVER['HTTP_HOST'] . strtok($_SERVER["REQUEST_URI"], '?');
+$params .="&offer_url=". $_SERVER['HTTP_HOST'] . strtok($_SERVER["REQUEST_URI"], '?');
 ?>
 
 
