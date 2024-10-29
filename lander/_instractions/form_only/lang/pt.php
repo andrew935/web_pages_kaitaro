@@ -7,7 +7,7 @@ $text->full_name = 'Nome Completo';
 
 $text->email = 'E-mail';
 $text->phone = 'Número de telefone';
-$text->register = 'REGISTRE-SE AQUI';
+$text->register = 'Cadastre-se aqui';
 $text->terms = 'Termos e condições';
 
 

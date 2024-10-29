@@ -1,6 +1,6 @@
 <?php
 $general_url = 'https://'.$_SERVER['HTTP_HOST'];
-$platform = $GET['platform'] ?? 'n2';
+$platform = $GET['platform'] ?? 'kaitaro';
 
 switch ($platform) {
     case 'n2':
@@ -29,8 +29,8 @@ $pixel = $_GET['pixel'] ?? $_COOKIE['pixel'] ?? '';
 if ($pixel == 'null'){
     $pixel ='';
 }
-$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'IN';
-$lang = $_GET['lang'] ?? 'en';
+$country = $_GET['country'] ?? $_SERVER["HTTP_CF_IPCOUNTRY"] ??  'CL';
+$lang = $_GET['lang'] ?? 'es';
 $lang = strtolower($lang);
 
 $first_name = $_GET['first_name'] ?? '';

@@ -4,17 +4,17 @@
     margin-top: 5px;
     outline: none;
 }
-
-
 .register_form input {
-    border-radius: 4px;
-  font-size: 14px;
-  height: 45px;
-  line-height: 1.5;
-  min-width: 243px;
-  padding-left: 15px;
+    width: 100%;
+    height: 2.5rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    border-radius: 5px;
+    box-sizing: border-box;
 }
-
+.form-label{
+    display: none!important;
+}
 .register_form  .errors{
     background: #c38188;
     text-align: center;
@@ -22,42 +22,42 @@
     margin: 10px;
     padding: 5px;
 }
-
-.register_form .submit_button{
-    height: 57px;
-    border: 0;
-    cursor: pointer;
-    transition: all .3s;
-    font-size: 20px;
-    text-transform: uppercase;
-    background-color: #10a37f ;
-    color: #FFFFFF ;
-    font-family: "Tajawal", Sans-serif;
-    font-weight: 600;
-    width: 100%;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: 0px 4px 9px rgba(0,0,0,0.25);
-    line-height: 1.5;
-    padding: 8px 16px;
-    margin: 15px auto;
+.register_form {
+    max-width: 600px!important;
+    margin: 0 auto;
+    display: block;
 }
-
+.register_form .submit_button {
+    margin: 10px auto;
+    padding: 0.7rem 1.4rem;
+    border: 0;
+    font-size: 1.2rem;
+    line-height: 0;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    width: 100%;
+    background-color: #7ed321;
+    height: 45px;
+}
+.invest_250 {
+    color: #fff !important;
+    font-weight: 600;
+}
 .register_form .submit_button:hover {
     transform: scale(1.08);
 }
 
-
-
-
-.form-label  {
-  display: none;
+.iti--allow-dropdown input[type="tel"], .iti--separate-dial-code input {
+    padding-left: 86px !important;
 }
 
-.register_form .mb-3 {
-  margin-bottom: 11px;
+.iti__country-list{
+    color: #000!important;
 }
-
-
-#phone {
-  padding-left: 92px !important;
+::placeholder {
+    color: #000;
+    opacity: 1;
 }
