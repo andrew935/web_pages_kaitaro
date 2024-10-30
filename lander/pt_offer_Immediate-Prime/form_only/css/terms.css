@@ -1,0 +1,19 @@
+
+input#terms {
+
+    max-width: 15px;
+    display: inline-block;
+    margin: 0 0;
+    max-height: 15px;
+    vertical-align: bottom;
+}
+
+.terms, .terms a{
+    color:grey;
+    font-size:0.9em
+}
+.terms {
+    text-align: left;
+    font-size: 0.8em;
+    margin-top: 1em;
+}
