@@ -1,0 +1,49 @@
+.register_form input,.iti,button[type='submit']{
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    outline: none;
+}
+
+
+.register_form input {
+    /*height: 42px;*/
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.register_form input::placeholder {
+    color: #757575;
+}
+
+.register_form  .errors{
+    background: #c38188;
+    text-align: center;
+    color: black;
+    margin: 10px;
+    padding: 5px;
+}
+
+.register_form .submit_button{
+    height: 64px;
+    border: 0;
+    cursor: pointer;
+    font-size: 17px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-image: linear-gradient(166deg, #156cff 1%, #0e49ff);
+    box-shadow: 0 4px 20.9px 3.1px #0d0d0d6e;
+    font-weight: 500;
+    width: 90%;
+    line-height: 1.5;
+    padding: 8px 16px;
+    margin: 15px auto;
+}
+
+

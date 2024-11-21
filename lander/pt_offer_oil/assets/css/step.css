@@ -1,0 +1,457 @@
+.step {
+  padding: 100px 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  max-width: calc(100% - 60px);
+  margin: 0 auto;
+}
+
+.step_heroTitle {
+  margin-bottom: 60px;
+}
+.step_wrp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.step_half1 {
+  max-width: 504px;
+  touch-action: none;
+}
+.step_itemWrp {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+  margin-bottom: 40px;
+}
+.step_itemWrp:last-of-type {
+  margin-bottom: 0;
+}
+.step_itemWrp.active {
+  opacity: 1;
+}
+.step_separator {
+  width: 4px;
+  height: 195px;
+  background: #fff;
+  border-radius: 4px;
+}
+.active .step_separator {
+  background: #ffb400;
+}
+.step_inner {
+  position: relative;
+  max-width: 465px;
+  padding: 20px 0 20px 30px;
+}
+.active .step_inner::before {
+  background: #ffb400;
+}
+.step_inner::before {
+  position: absolute;
+  content: "";
+  width: 4px;
+  height: 100%;
+  display: block;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px;
+  background: #fff;
+}
+.step_counter {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #232323;
+  margin-bottom: 8px;
+}
+.active .step_counter {
+  color: #ffb400;
+}
+
+.active.step2 .step_counter {
+  color: #5954d9;
+}
+.step_title {
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 28px;
+  text-indent: 35px;
+  margin-bottom: 15px;
+}
+.active .step_title {
+  color: #ffb400;
+}
+.step_text {
+  font-size: 18px;
+  line-height: 26px;
+}
+.step_half2 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  min-width: 503px;
+  min-height: 584px;
+}
+.step_img_desc {
+  font-size: 14px;
+  line-height: 20px;
+  background: #181818;
+  border: 2px solid #ffb400;
+  border-radius: 10px;
+  padding: 8px 13px;
+  margin-bottom: 10px;
+}
+.step_img {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  max-width: 440px;
+}
+.step_img.active {
+  opacity: 1;
+}
+.step_img img {
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+}
+.step_img.step3 {
+  padding: 0;
+}
+.step_img.step1 img {
+  border: 2px solid rgba(255, 255, 255, 0.15);
+}
+.step_img.step1::before {
+  content: "";
+  width: 66px;
+  height: 48px;
+  position: absolute;
+  top: 55%;
+  left: -11px;
+  background: url("../images/Arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: bounce 1500ms infinite;
+}
+.step_img.step1--de::before,
+.step_img.step1--pt::before,
+.step_img.step1--es::before {
+  top: 59%;
+}
+.step_img.step1::after {
+  content: "";
+  width: 66px;
+  height: 48px;
+  position: absolute;
+  top: 64%;
+  left: -11px;
+  background: url("../images/Arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: bounce 1500ms infinite;
+}
+.step_img.step1--de::after,
+.step_img.step1--pt::after,
+.step_img.step1--es::after {
+  top: 67%;
+}
+@keyframes bounce {
+  50% {
+    left: -31px;
+  }
+}
+.step_img.step2::before {
+  content: "";
+  width: 66px;
+  height: 48px;
+  position: absolute;
+  top: 125px;
+  left: 55%;
+  transform: rotate(90deg);
+  background: url("../images/Arrow.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: bounceDep 1500ms infinite;
+}
+.step_img.step2--es::before {
+  top: 20%;
+  right: 60px;
+  left: initial;
+  transform: rotate(180deg);
+  animation: bounceDepPt 1500ms infinite;
+}
+.step_img.step2--de::before {
+  top: 57%;
+  left: 0px;
+  transform: rotate(0);
+  animation: bounceSide 1500ms infinite;
+}
+.step_img.step2--pt::before {
+  content: "";
+  width: 66px;
+  height: 48px;
+  position: absolute;
+  top: 73%;
+  left: unset;
+  right: 100px;
+  transform: rotate(180deg);
+  background: url(../images/Arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  animation: bounceDepPt 1500ms infinite;
+}
+@keyframes bounceDepPt {
+  50% {
+    right: 80px;
+  }
+}
+@keyframes bounceDep {
+  50% {
+    top: 105px;
+  }
+}
+@keyframes bounceSide {
+  50% {
+    left: -20px;
+  }
+}
+.step_mob {
+  display: none;
+}
+@media (max-width: 1250px) {
+  .step {
+    padding: 75px 0;
+    max-width: calc(100% - 38px);
+  }
+  .step_heroTitle {
+    margin-bottom: 50px;
+  }
+  .step_inner {
+    padding: 15px 0 15px 18px;
+  }
+  .step_img {
+    padding: 25px;
+    max-width: 355px;
+  }
+  .step_img.step1::before {
+    top: 58.5%;
+  }
+  .step_img.step1--de::before,
+  .step_img.step1--pt::before,
+  .step_img.step1--es::before {
+    top: 60%;
+  }
+  .step_img.step1::after {
+    top: 66.5%;
+  }
+  .step_img.step1--de::after,
+  .step_img.step1--pt::after,
+  .step_img.step1--es::after {
+    top: 68%;
+  }
+  .step_img.step2::before {
+    top: 115px;
+  }
+  .step_img.step2--de::before {
+    top: 59.5%;
+  }
+  .step_img.step2--pt::before {
+    top: 73%;
+    left: unset;
+    right: 70px;
+  }
+  .step_img.step2--es::before {
+    top: 23.5%;
+    right: 40px;
+  }
+  @keyframes bounceDep {
+    50% {
+      top: 95px;
+    }
+  }
+  @keyframes bounceDepPt {
+    50% {
+      right: 50px;
+    }
+  }
+}
+@media (max-width: 1023px) {
+  .step .container {
+    padding: 0 0 0 21px;
+  }
+  .step_inner {
+    max-width: 334px;
+  }
+  .step_half2 {
+    min-width: 355px;
+    min-height: unset;
+    margin-left: 16px;
+  }
+  .step_title {
+    font-size: 18px;
+    line-height: 26px;
+  }
+  .step_img.step2::before {
+    left: 54%;
+  }
+  .step_img.step2--pt::before {
+    top: 73%;
+    left: unset;
+    right: 70px;
+  }
+  .step_img.step2--de::before {
+    left: 0%;
+  }
+  .step_img.step2--es::before {
+    left: initial;
+    right: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .step .container {
+    padding: 0 10px;
+  }
+  .step {
+    padding: 30px 0 10px;
+    max-width: calc(100% - 20px);
+  }
+  .step2 .step_title,
+  .step3 .step_title {
+    color: #fff !important;
+  }
+  .step_heroTitle {
+    margin-bottom: 30px;
+  }
+  .step_wrp {
+    display: none;
+  }
+  .step_mob {
+    display: block;
+  }
+  .step_itemWrp {
+    margin-bottom: 20px;
+  }
+  .step_separator {
+    height: 201px;
+  }
+  .step_inner {
+    max-width: 100%;
+  }
+  .step_img {
+    position: relative;
+    padding: 0;
+    background: none;
+    margin: 0 auto 30px;
+  }
+  .step_img.step3 {
+    margin-bottom: 0;
+  }
+  .step_img.step1,
+  .step_img.step3 {
+    max-width: 383px;
+  }
+  .step_img.step1::before {
+    top: 55.5%;
+    left: -26px;
+  }
+  .step_img.step1--de::before,
+  .step_img.step1--pt::before,
+  .step_img.step1--es::before {
+    top: 60%;
+  }
+  .step_img.step1::after {
+    top: 65%;
+    left: -26px;
+  }
+  .step_img.step1--de::after,
+  .step_img.step1--pt::after,
+  .step_img.step1--es::after {
+    top: 68.5%;
+  }
+  @keyframes bounce {
+    50% {
+      left: -41px;
+    }
+  }
+  .step_img.step2::before {
+    width: 47px;
+    left: 56%;
+    top: 70px;
+  }
+  .step_img.step2--de::before {
+    top: 60%;
+    left: -30px;
+    animation-name: bounceSideMob;
+  }
+  .step_img.step2--pt::before {
+    width: 47px;
+    right: 65px;
+    left: unset;
+    top: 75%;
+  }
+  .step_img.step2--es::before {
+    left: initial;
+    width: 47px;
+    right: 50px;
+    top: 16%;
+  }
+  @keyframes bounceDep {
+    50% {
+      top: 90px;
+    }
+  }
+
+  @keyframes bounceSideMob {
+    50% {
+      left: -50px;
+    }
+  }
+  @keyframes bounceDepPt {
+    50% {
+      right: 45px;
+    }
+  }
+}
+@media (max-width: 415px) {
+  .step_img.step1::before {
+    top: 57%;
+  }
+  .step_img.step1--de::before,
+  .step_img.step1--pt::before,
+  .step_img.step1--es::before {
+    top: 60%;
+  }
+  .step_img.step1::after {
+    top: 66%;
+  }
+  .step_img.step1--de::after,
+  .step_img.step1--pt::after,
+  .step_img.step1--es::after {
+    top: 68.5%;
+  }
+}
+@media (max-width: 376px) {
+  .step_img.step1::before {
+    top: 59%;
+  }
+  .step_img.step1--de::before,
+  .step_img.step1--pt::before,
+  .step_img.step1--es::before {
+    top: 61%;
+  }
+  .step_img.step1::after {
+    top: 68%;
+  }
+  .step_img.step1--de::after,
+  .step_img.step1--pt::after,
+  .step_img.step1--es::after {
+    top: 69%;
+  }
+}

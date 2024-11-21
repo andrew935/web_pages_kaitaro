@@ -1,0 +1,149 @@
+.form {
+  max-width: 380px;
+  width: 100%;
+  padding: 28px 18px;
+  background-color: #151515;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+}
+
+.form__title {
+  font-weight: 800;
+  font-size: 35px;
+  line-height: 35px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #ffb400;
+}
+
+.form__subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+form {
+  position: relative;
+  top: auto;
+}
+
+.f1t-form {
+  padding-bottom: 15px;
+}
+
+.f1t-form-field {
+  padding-bottom: 10px;
+}
+
+.f1t-form-field__label {
+  display: none;
+}
+
+.f1t-form__submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: #ffb400;
+  border-radius: 40px;
+  padding: 15px 20px 15px;
+  border: none;
+  font-family: "ProximaNova";
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.f1t-form__submit:hover {
+  background-color: #ffa31a;
+}
+
+.f1t-form-field {
+  position: relative;
+}
+
+.f1t-form-field__error {
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.f1t-form-field label {
+  display: block;
+}
+
+.f1t-form-field input {
+  display: block;
+  width: 100%;
+  font-size: 16px;
+  line-height: 19px;
+  color: rgba(0, 0, 0, 0.75);
+  outline: none;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 12px 46px 10px 14px;
+}
+
+.f1t-form-field input:focus {
+  border-color: rgb(0, 195, 255);
+}
+
+.f1t-form-field input::placeholder {
+  opacity: 0.7;
+}
+
+.f1t-form-field--error input,
+.f1t-form-field--error textarea,
+.f1t-form-field--error select {
+  border-color: red;
+}
+
+.f1t-form-field--phone input {
+  padding-right: 6px;
+  padding-left: 52px;
+}
+
+.iti__flag-container {
+  color: #000;
+}
+
+.checkbox-svg label.checked-svg {
+  height: 20px !important;
+}
+
+.checkbox-svg label.checked-svg {
+  background-color: #ffb400 !important;
+  border-radius: 3px;
+}
+
+#cbx:checked + .checked-svg svg,
+#cbx-3:checked + .checked-svg svg {
+  stroke: #000 !important;
+}
+
+.privacy-checkbox p {
+  font-size: 13px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.privacy-checkbox p a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.control__input {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .form {
+    margin: 0 auto;
+  }
+}
